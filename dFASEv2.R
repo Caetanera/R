@@ -1,12 +1,12 @@
 if (!require(pacman)) install.packages("pacman")
 pacman::p_load(tidyverse, readxl, lubridate, writexl)
 
-caminho_do_arquivo <- "C:/Users/caetn/OneDrive/Área de Trabalho/Caetano/Prog/R/Dados/MONITORAMENTO/FASE/FASEv0.xlsx" # Especificando o caminho do arquivo
-planilhas <- excel_sheets(caminho_do_arquivo) # Função para obter os nomes das planilhas no arquivo
-nome_da_planilha <- "MOV" # Selecionando a planilha desejada
-df <- read_excel(caminho_do_arquivo, sheet = nome_da_planilha) # Função read_excel para importar a planilha desejada
+caminho_do_arquivo <- "CAMINHO DO ARQUIVO" 
+planilhas <- excel_sheets(caminho_do_arquivo) 
+nome_da_planilha <- "MOV"
+df <- read_excel(caminho_do_arquivo, sheet = nome_da_planilha) 
 
-df$Data_da_Movimentacao <- as.Date(df$Data_da_Movimentacao) # Função as.Date para transformar os valores em "date"
+df$Data_da_Movimentacao <- as.Date(df$Data_da_Movimentacao) 
 df$Data_de_Nascimento <- as.Date(df$Data_de_Nascimento)
 
 ################################################################################################
@@ -68,7 +68,7 @@ info_res1 <- data.frame(Ano_Entrada = double(),
 
 # Cria arquivos .xlsx para cada ano com dados do df_FASEv4aL!!
 for (i in seq_along(list_FASEv1)) {
-  nome_arquivo <- paste0("C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADOSv1",
+  nome_arquivo <- paste0("CAMINHO",
                          list_FASEv1[[i]]$Ano_Entrada,".xlsx")
   
   # Total
@@ -112,7 +112,7 @@ info_res1 <- bind_rows(info_res1, data.frame(Ano_Entrada = "Total",
 
 # Salvando o dataframe com os resultados como um arquivo .xlsx
 # 
-write_xlsx(info_res1,"C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADO.1.POR.ANO.xlsx")
+write_xlsx(info_res1,"CAMINHO")
 
 
 
@@ -153,7 +153,7 @@ info_res2 <- data.frame(Ano_Entrada = double(),
 
 # Cria arquivos .xlsx para cada ano com dados do df_FASEv4aL!!
 for (i in seq_along(list_FASEv2)) {
-  nome_arquivo <- paste0("C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADOSv2",
+  nome_arquivo <- paste0("CAMINHO",
                          list_FASEv2[[i]]$Ano_Entrada,".xlsx")
   
   # Total
@@ -196,7 +196,7 @@ info_res2 <- bind_rows(info_res2, data.frame(Ano_Entrada = "Total",
 
 # Salvando o dataframe com os resultados como um arquivo .xlsx
 
-write_xlsx(info_res2,"C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADO.2.POR.ANO.xlsx")
+write_xlsx(info_res2,"CAMINHO")
 
 ################################################################################################
 # RESULTADO 3 - Todas as idades e com o critério de passar mais de 18 meses na FASE
@@ -236,7 +236,7 @@ info_res3 <- data.frame(Ano_Entrada = double(),
 
 # Cria arquivos .xlsx para cada ano com dados do df_FASEv4aL!!
 for (i in seq_along(list_FASEv3)) {
-  nome_arquivo <- paste0("C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADOSv4",
+  nome_arquivo <- paste0("CAMINHO",
                          list_FASEv3[[i]]$Ano_Entrada,".xlsx")
   
   # Total
@@ -279,7 +279,7 @@ info_res3 <- bind_rows(info_res3, data.frame(Ano_Entrada = "Total",
 
 # Salvando o dataframe com os resultados como um arquivo .xlsx
 # 
-write_xlsx(info_res3,"C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADO.3.POR.ANO.xlsx")
+write_xlsx(info_res3,"CAMINHO")
 
 
 
@@ -322,7 +322,7 @@ info_res4 <- data.frame(Ano_Entrada = double(),
 
 # Cria arquivos .xlsx para cada ano com dados do df_FASEv4aL!!
 for (i in seq_along(list_FASEv4)) {
-  nome_arquivo <- paste0("C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADOSv4",
+  nome_arquivo <- paste0("CAMINHO",
                          list_FASEv4[[i]]$Ano_Entrada,".xlsx")
   
   # Total
@@ -365,5 +365,5 @@ info_res4 <- bind_rows(info_res4, data.frame(Ano_Entrada = "Total",
 
 # Salvando o dataframe com os resultados como um arquivo .xlsx
 # 
-write_xlsx(info_res4,"C:/Users/caetano-garcia/Desktop/R/FASE/RESULTADOS/RESULTADO.4.POR.ANO.xlsx")
+write_xlsx(info_res4,"CAMINHO")
 
